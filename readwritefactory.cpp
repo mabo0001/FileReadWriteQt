@@ -1,0 +1,29 @@
+#include "readwritefactory.h"
+
+AbstractRead* ReadWriteFactory::CreateReader(const STRATEGY &strategy) {
+    std::unique_ptr<AbstractRead> read_ptr = nullptr;
+
+    if (strategy == STRATEGY::FILE_IO) {
+
+    } else {
+        read_ptr = std::make_unique<MessageBoxRead>();
+    }
+
+    if (read_ptr == nullptr)
+        return nullptr;
+    return read_ptr.release();
+}
+
+AbstractWrite* ReadWriteFactory::CreateWriter(const STRATEGY &strategy) {
+    std::unique_ptr<AbstractWrite> write_ptr = nullptr;
+
+    if (strategy == STRATEGY::FILE_IO) {
+
+    } else {
+        write_ptr = std::make_unique<MessageBoxWrite>();
+    }
+
+    if (write_ptr == nullptr)
+        return nullptr;
+    return write_ptr.release();
+}

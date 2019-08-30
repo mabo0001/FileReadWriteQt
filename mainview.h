@@ -2,8 +2,10 @@
 #define MAINVIEW_H
 
 #include <QMainWindow>
-#include <QMessageBox>
-#include <QPushButton>
+//#include <QPushButton>
+#include "readwritefactory.h"
+#include "abstractread.h"
+#include "abstractwrite.h"
 
 namespace Ui {
 class MainView;
@@ -27,7 +29,8 @@ public slots:
 private:
     Ui::MainView *ui;
     void m_wire_signals_slots();
-    QMessageBox mMsgBox;
+    std::unique_ptr<AbstractRead> mReader_ptr;
+    std::unique_ptr<AbstractWrite> mWriter_ptr;
 };
 
 #endif // MAINVIEW_H

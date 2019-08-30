@@ -22,14 +22,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-CONFIG += c++11
+CONFIG += c++1z
 
 SOURCES += \
+        abstractread.cpp \
+        abstractwrite.cpp \
         main.cpp \
-        mainview.cpp
+        mainview.cpp \
+        messageboxread.cpp \
+        messageboxwrite.cpp \
+        readwritefactory.cpp
 
 HEADERS += \
-        mainview.h
+        abstractread.h \
+        abstractwrite.h \
+        mainview.h \
+        messageboxread.h \
+        messageboxwrite.h \
+        readwritefactory.h
 
 FORMS += \
         mainview.ui

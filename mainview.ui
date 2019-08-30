@@ -10,6 +10,12 @@
     <height>733</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainView</string>
   </property>
@@ -34,6 +40,9 @@
        <width>111</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
      </property>
      <property name="text">
       <string>Write</string>
@@ -107,6 +116,9 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
      <property name="text">
       <string>Read</string>
      </property>
@@ -155,6 +167,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
@@ -166,25 +183,9 @@
   <tabstop>plainTextEdit</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>btnWrite</sender>
-   <signal>clicked()</signal>
-   <receiver>MainView</receiver>
-   <slot>m_write_button_pushed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>502</x>
-     <y>217</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>563</x>
-     <y>250</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>m_write_button_pushed()</slot>
+  <slot>m_read_button_pushed()</slot>
  </slots>
 </ui>
