@@ -10,8 +10,10 @@ MainView::MainView(QWidget *parent) :
     std::cout << "const" << std::endl;
     ui->setupUi(this);
 
-    mReader_ptr.reset(ReadWriteFactory::CreateReader(STRATEGY::MESSAGE_BOX));
-    mWriter_ptr.reset(ReadWriteFactory::CreateWriter(STRATEGY::MESSAGE_BOX));
+//    mReader_ptr.reset(ReadWriteFactory::CreateReader(STRATEGY::MESSAGE_BOX));
+//    mWriter_ptr.reset(ReadWriteFactory::CreateWriter(STRATEGY::MESSAGE_BOX));
+    mReader_ptr.reset(ReadWriteFactory::CreateReader(STRATEGY::FILE_IO));
+    mWriter_ptr.reset(ReadWriteFactory::CreateWriter(STRATEGY::FILE_IO));
 
     this->m_wire_signals_slots();
 }
@@ -23,9 +25,9 @@ MainView::~MainView()
 
 void MainView::test_func()
 {
-    QMessageBox box;
-    box.setText("test");
-    box.exec();
+//    QMessageBox box;
+//    box.setText("test");
+//    box.exec();
 }
 
 void MainView::m_wire_signals_slots()
@@ -48,11 +50,12 @@ void MainView::m_write_button_pushed()
 
 void MainView::m_read_button_pushed()
 {
+    ui->plainTextEdit->clear();
+
     std::cout << "read test" << std::endl;
     std::string filename = ui->lneReadFile->text().toStdString();
 
     std::string read_value = mReader_ptr->Read(filename);
 
-    ui->plainTextEdit->clear();
     ui->plainTextEdit->appendPlainText(read_value.c_str());
 }

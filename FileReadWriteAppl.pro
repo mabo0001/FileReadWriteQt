@@ -27,6 +27,8 @@ CONFIG += c++1z
 SOURCES += \
         abstractread.cpp \
         abstractwrite.cpp \
+        fileread.cpp \
+        filewrite.cpp \
         main.cpp \
         mainview.cpp \
         messageboxread.cpp \
@@ -36,6 +38,8 @@ SOURCES += \
 HEADERS += \
         abstractread.h \
         abstractwrite.h \
+        fileread.h \
+        filewrite.h \
         mainview.h \
         messageboxread.h \
         messageboxwrite.h \

@@ -145,6 +145,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="text">
+      <string>/Users/dangrostick/development/FileReadWriteAppl/test_file.txt</string>
+     </property>
     </widget>
    </widget>
   </widget>
